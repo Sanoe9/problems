@@ -38,17 +38,17 @@ var isPalindrome = function(head) {
 };
 
 function reverse(head) {
-  let prev = null;
-  let curr = head;
-  let next = null;
-  
-  while(curr) {
-    const next = curr.next;
-    curr.next = prev;
-    prev = curr;
-    curr = next;
-  }
-  
-  return prev;
+    let prev = null;
+    let curr = head;
+    let next = null;
+    
+    while (curr) {
+        next = curr.next; // save the next node before we change the pointers
+        curr.next = prev; // change the pointer
+        prev = curr;
+        curr = next;
+    }
+    
+    return prev;
 };
 

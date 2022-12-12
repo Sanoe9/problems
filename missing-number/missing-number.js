@@ -11,3 +11,15 @@ var missingNumber = function(nums) {
         }
     }
 };
+
+var missingNumber1 = function(nums) {
+    let sortedNums = nums.sort((a, b) => a - b);
+    let counter = 0;
+    for (let i = 0; i <= sortedNums.length; i++) {
+        let number = sortedNums[i];
+        if (number !== counter) {
+            return counter;
+        }
+        counter++;
+    }
+};

@@ -2,13 +2,14 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var findDisappearedNumbers = function(nums) {
+ var findDisappearedNumbers = function(nums) {
+    let range = [...Array(nums.length + 1).keys()];
+    console.log('range', range);
     let result = [];
-    const range = [...Array(nums.length + 1).keys()].slice(1);
-    for (let i = 0; i < range.length; i++) {
-        const element = range[i];
-        if (!nums.includes(element)) {
-            result.push(element);
+    for (let i = 1; i < range.length; i++) {
+        let num = range[i];
+        if (!nums.includes(num)) {
+            result.push(num);
         }
     }
     return result;

@@ -17,3 +17,9 @@ var singleNumber = function(nums) {
         }
     }
 };
+
+var singleNumber1 = function(nums) {
+    return nums.reduce((acc, cur) => {
+        return acc ^ cur;
+    }, 0);
+};

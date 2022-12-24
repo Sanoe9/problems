@@ -41,4 +41,45 @@ let calculateTotalPrice = (shoppingCart) => {
     }, 0);
 };
 
-console.log(calculateTotalPrice(shoppingCart));
+
+// Given a list of fruits, let’s create an object that groups the fruits by how many times they occur in the array
+
+const fruits = [
+    'apple',
+    'orange',
+    'orange',
+    'apple',
+    'cherry',
+    'grape',
+    'banana',
+    'cherry',
+    'orange'
+];
+
+const tally = (fruits) => {
+    let obj = {};
+
+    for (let i = 0; i < fruits.length; i++) {
+        const fruit = fruits[i];
+        if (obj[fruit]) {
+            obj[fruit]++;
+        } else {
+            obj[fruit] = 1;
+        }
+    }
+
+    return obj;
+};
+
+const tally1 = (fruits) => {
+    return fruits.reduce((prevValue, currValue) => {
+        if (prevValue[currValue]) {
+            prevValue[currValue]++;
+            return prevValue;
+        } else {
+            prevValue[currValue] = 1;
+            return prevValue;
+        }
+    }, {});
+};
+

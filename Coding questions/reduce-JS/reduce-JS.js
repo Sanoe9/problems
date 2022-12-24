@@ -83,3 +83,18 @@ const tally1 = (fruits) => {
     }, {});
 };
 
+// Flatten array using reduce
+
+const nums2D = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+const flatten = (array) => {
+    return array.reduce((prev, curr) => {
+        return prev.concat(curr);
+    }, []);
+};
+
+console.log(flatten(nums2D));

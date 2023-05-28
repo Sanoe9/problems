@@ -13,11 +13,11 @@ var climbStairs = function(n) {
 
 //     return climbStairs(n - 1) + climbStairs(n - 2);
     
-    let arr = [];
-    arr[0] = 1;
-    arr[1] = 2;
+    let dp = [];
+    dp[0] = 1;
+    dp[1] = 1;
     for (let i = 2; i <= n; i++) {
-        arr[i] = arr[i - 1] + arr[i - 2];
+        dp.push(dp[i - 1] + dp[i - 2]);
     }
-    return arr[n - 1]
+    return dp[n];
 };

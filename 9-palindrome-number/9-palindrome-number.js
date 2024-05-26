@@ -18,6 +18,6 @@ var isPalindrome = function(x) {
     return JSON.stringify(array) === JSON.stringify(array.reverse())
 };
 
-const isPalindrome1 = (x) => {
+const isPalindrome1 = x => {
     return String(x).split('').reverse().join('') === String(x);
 };

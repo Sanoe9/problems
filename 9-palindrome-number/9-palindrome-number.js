@@ -21,3 +21,17 @@ var isPalindrome = function(x) {
 const isPalindrome1 = x => {
     return String(x).split('').reverse().join('') === String(x);
 };
+
+const isPalindrome2 = x => {
+    if (x < 0) {
+        return false;
+    }
+
+    let array = [];
+    while (x != 0) {
+        array.push(x % 10);
+        x = Math.floor(x / 10);
+    }
+
+    return array.join('') === array.reverse().join('');
+}
